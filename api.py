@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from gevent.pywsgi import WSGIServer
 
 
 import numpy as np
@@ -247,6 +248,8 @@ def add():
     
 
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0')
+    # app.run(debug=False,host='0.0.0.0')
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
 
 

@@ -62,9 +62,9 @@ for user_info in user_location_data.values():
     user_data.append(user_dict)
 
 # Print the list of dictionaries
-for user_dict in user_data:
-    print(user_dict)
-print(user_data)
+# for user_dict in user_data:
+#     print(user_dict)
+# print(user_data)
 df = pd.DataFrame(user_data)
 
 app = Flask(__name__)

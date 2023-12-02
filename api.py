@@ -16,12 +16,24 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline 
 from geopy.distance import geodesic
+import os
+from pathlib import Path
+
+# Get the current directory of the script
+current_directory = Path(__file__).resolve().parent
+
+# Adjust the filename and construct the new path using .\ explicitly
+file_name = "patchnet-b35d6-firebase-adminsdk-12855-b014335dbf.json"
+file_path = current_directory / file_name
+
+# Use the constructed file path
+cred = credentials.Certificate(str(file_path))
 
 
 
 
 
-cred = credentials.Certificate(".\patchnet-b35d6-firebase-adminsdk-12855-b014335dbf.json")
+# cred = credentials.Certificate(".\patchnet-b35d6-firebase-adminsdk-12855-b014335dbf.json")
 
 # Check if the app is already initialized
 try:

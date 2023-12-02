@@ -21,7 +21,7 @@ from geopy.distance import geodesic
 
 
 
-cred = credentials.Certificate("\patchnet-b35d6-firebase-adminsdk-12855-b014335dbf.json")
+cred = credentials.Certificate(r".\patchnet-b35d6-firebase-adminsdk-12855-b014335dbf.json")
 
 # Check if the app is already initialized
 try:

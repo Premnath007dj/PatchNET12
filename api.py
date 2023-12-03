@@ -86,8 +86,8 @@ def predict():
     coordinates = StandardScaler().fit_transform(coordinates)
 
 # Apply DBSCAN algorithm with three parameters
-    eps_value = 0.9  # Adjust the epsilon (eps) value based on your data
-    min_samples_value = 3  # Adjust the min_samples value based on your data
+    eps_value = 0.4 # Adjust the epsilon (eps) value based on your data
+    min_samples_value = 4  # Adjust the min_samples value based on your data
     # eps_value = 0.1# Adjust the epsilon (eps) value based on your data
     # min_samples_value = 3 
     dbscan = DBSCAN(eps=eps_value, min_samples=min_samples_value)

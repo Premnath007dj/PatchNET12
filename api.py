@@ -78,7 +78,7 @@ CORS(app)
 @app.route('/predict', methods=['GET'])
 def predict():
     sim_name = request.args.get('SimName')
-    if data['SimName'] == sim_name
+    # if data['SimName'] == sim_name
     filtered_user_data = [data for data in user_data if data['SimName'] == sim_name]
     coordinates = np.array([[data['latitude'], data['longitude'], data['networkSpeed']] for data in filtered_user_data])
 

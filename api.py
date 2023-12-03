@@ -80,14 +80,14 @@ def predict():
     sim_name = request.args.get('SimName')
     # if data['SimName'] == sim_name
     filtered_user_data = [data for data in user_data if data['SimName'] == sim_name]
-    coordinates = np.array([[data['latitude'], data['longitude']] for data in filtered_user_data])
+    coordinates = np.array([[data['latitude'], data['longitude'], data['networkSpeed']] for data in filtered_user_data])
 
 # Standardize the data
     coordinates = StandardScaler().fit_transform(coordinates)
 
 # Apply DBSCAN algorithm with three parameters
-    eps_value = 0.4 # Adjust the epsilon (eps) value based on your data
-    min_samples_value = 4  # Adjust the min_samples value based on your data
+    eps_value = 0.7 # Adjust the epsilon (eps) value based on your data
+    min_samples_value = 3  # Adjust the min_samples value based on your data
     # eps_value = 0.1# Adjust the epsilon (eps) value based on your data
     # min_samples_value = 3 
     dbscan = DBSCAN(eps=eps_value, min_samples=min_samples_value)
